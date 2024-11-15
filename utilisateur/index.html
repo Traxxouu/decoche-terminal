@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>∂є¢σ¢нє</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- React and Babel Libraries -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script src="script.js" defer type="text/babel"></script>
+</head>
+<body>
+  <div class="ecran">
+    <button class="dossier-important" onclick="openPopup('Important')">
+      <img src="media/dossier.webp" alt="Important">
+      <span>Important</span>
+    </button>
+    <button class="dossier-info" onclick="openPopup('Information')">
+      <img src="media/dossier.webp" alt="Information">
+      <span>Information</span>
+    </button>
+    <button class="terminal" onclick="openTerminal()">
+      <img src="media/terminal.png" alt="CMD">
+      <span>Terminal</span>
+    </button>
+  </div>
+
+  <div class="file" id="file" onclick="openFilePopup()">
+    <img src="media/file.png" alt="File">
+    <span>file.txt</span>
+  </div>
+
+  <!-- Terminal Root -->
+  <div id="root" style="display: none;"></div>
+  <div class="mobile-message">
+    Please open this site on a PC for the best experience.
+  </div>
+  <div id="popup" class="popup">
+    <button class="close-btn" onclick="closePopup()">Close</button>
+    <p id="popup-message"></p>
+  </div>
+  <script>
+    if (window.innerWidth < 1024 || window.innerHeight < 700) {
+      alert('Please open this site on a PC for the best experience.');
+      document.querySelector('.ecran').style.display = 'none';
+      document.querySelector('.mobile-message').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
